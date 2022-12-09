@@ -42,9 +42,6 @@ public class PrintServices {
 
 	public PrintModel obtenerUsuarios(impresion p) throws IOException, PrintException {
 		
-		System.out.println(p.getIp());
-		System.out.println(p.getMesa());
-		System.out.println(p.getN_impresora());
 		PrintRequestAttributeSet patts = new HashPrintRequestAttributeSet();
 		patts.add(Sides.DUPLEX);
 		//PrintService ps = PrintServiceLookup.lookupDefaultPrintService();
@@ -59,6 +56,7 @@ public class PrintServices {
 			content.add(prod.getObservaciones());
 			
 		}
+		content.add("");
 		content.add("");
 
 		
@@ -83,7 +81,7 @@ public class PrintServices {
 		PrintService[] psEspacio = PrintServiceLookup.lookupPrintServices(null, null);
 		PrintService printer = null;
 		// search printer
-		printer = PrintServiceLookup.lookupDefaultPrintService();
+		printer =findPrintService(p.getN_impresora());
 
 		DocPrintJob jobEspacio = printer.createPrintJob();
 		DocFlavor flavorCut = DocFlavor.BYTE_ARRAY.AUTOSENSE;

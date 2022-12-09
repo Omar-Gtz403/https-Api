@@ -70,16 +70,16 @@ public class PrintServices {
 		fis.close();
 
 		byte[] space = { 27, 100, 5 };
-		espacio(space);
+		espacio(space, p);
 		 byte[] cortar = { 0x1B, 0x69 };
-		 corte(cortar);
+		 corte(cortar, p);
 		//cashdrawerOpen();
 
 		printModel.setExito("se imprimio correctamente");
 		return printModel;
 	}
 
-	public String espacio(byte[] espacio) {
+	public String espacio(byte[] espacio,impresion p) {
 		PrintService[] psEspacio = PrintServiceLookup.lookupPrintServices(null, null);
 		PrintService printer = null;
 		// search printer
@@ -99,7 +99,8 @@ public class PrintServices {
 	public String cashdrawerOpen() {
 
 		byte[] open = { 27, 112, 48, 55, 121 };
-//	        byte[] cutter = {29, 86,49};
+ 
+		byte[] cutter = {29, 86,49};
 		PrintService printer = null;
 		// search printer
 		printer = PrintServiceLookup.lookupDefaultPrintService();
@@ -125,9 +126,9 @@ public class PrintServices {
 		return "La caja se abrio correctamente";
 	}
 
-	public void corte(byte[] corte) {
+	public void corte(byte[] corte,impresion p) {
 		try {
-			DocPrintJob job = PrintServiceLookup.lookupDefaultPrintService().createPrintJob();
+			DocPrintJob job = findPrintService(p.getN_impresora()).createPrintJob();
 			byte[] bytes = { 27, 109 };
 			DocFlavor flavor = DocFlavor.BYTE_ARRAY.AUTOSENSE;
 			Doc doc = new SimpleDoc(bytes, flavor, null);

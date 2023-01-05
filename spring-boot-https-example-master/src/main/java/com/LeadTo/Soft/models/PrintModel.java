@@ -1,4 +1,4 @@
-package com.techprimers.httpsexample.models;
+package com.LeadTo.Soft.models;
 
 import org.springframework.stereotype.Component;
 

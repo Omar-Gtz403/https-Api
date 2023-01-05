@@ -1,12 +1,12 @@
-package com.techprimers.httpsexample.controllers;
+package com.LeadTo.Soft.controllers;
 
 import java.io.IOException;
 
 import javax.print.PrintException;
 
-import com.techprimers.httpsexample.models.PrintModel;
-import com.techprimers.httpsexample.models.impresion;
-import com.techprimers.httpsexample.services.PrintServices;
+import com.LeadTo.Soft.models.PrintModel;
+import com.LeadTo.Soft.models.impresion;
+import com.LeadTo.Soft.services.PrintServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

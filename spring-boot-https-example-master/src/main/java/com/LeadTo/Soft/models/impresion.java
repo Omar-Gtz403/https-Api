@@ -1,10 +1,10 @@
-package com.techprimers.httpsexample.models;
+package com.LeadTo.Soft.models;
 
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
 
-import com.techprimers.httpsexample.models.Productos;
+import com.LeadTo.Soft.models.Productos;
 @Component
 
 public class impresion {

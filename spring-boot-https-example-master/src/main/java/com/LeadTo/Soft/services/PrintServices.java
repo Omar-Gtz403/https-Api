@@ -1,4 +1,4 @@
-package com.techprimers.httpsexample.services;
+package com.LeadTo.Soft.services;
 
 import java.awt.Color;
 import java.awt.print.PrinterException;
@@ -30,10 +30,10 @@ import javax.print.attribute.standard.Sides;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.techprimers.httpsexample.*;
-import com.techprimers.httpsexample.models.PrintModel;
-import com.techprimers.httpsexample.models.Productos;
-import com.techprimers.httpsexample.models.impresion;
+import com.LeadTo.Soft.*;
+import com.LeadTo.Soft.models.PrintModel;
+import com.LeadTo.Soft.models.Productos;
+import com.LeadTo.Soft.models.impresion;
 
 @Service
 public class PrintServices {
